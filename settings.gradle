@@ -1,0 +1,2 @@
+include ':app', ':kompose'
+rootProject.name='Kompose'
