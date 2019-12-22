@@ -48,7 +48,6 @@ class UIButton(context: Context, attributeSet: AttributeSet) : FrameLayout(conte
         val ta = mContext.obtainStyledAttributes(attributeSet, R.styleable.UIButton)
         compWidth = ta.getDimension(R.styleable.UIButton_compWidth, WRAP_CONTENT.toFloat())
         compHeight = ta.getDimension(R.styleable.UIButton_compHeight, WRAP_CONTENT.toFloat())
-        text = ta.getString(R.styleable.UIButton_text)!!
         bgColor = ta.getColor(R.styleable.UIButton_backgroundColor, Color.TRANSPARENT)
         strokeColor = ta.getColor(R.styleable.UIButton_strokeColor, Color.BLACK)
         strokeWidth = ta.getDimension(R.styleable.UIButton_strokeWidth, dpToPx(0F))
@@ -62,6 +61,10 @@ class UIButton(context: Context, attributeSet: AttributeSet) : FrameLayout(conte
         backgroundImage = ta.getResourceId(R.styleable.UIButton_backgroundImage, -1)
         gravity = ta.getInt(R.styleable.UIButton_gravity, GRAVITY_CENTER)
         spacing = ta.getDimension(R.styleable.UIButton_spacing, dpToPx(10F))
+
+        ta.getString(R.styleable.UIButton_text)?.let { it ->
+            text = it
+        }
 
         ta.getString(R.styleable.UIButton_fontPath)?.let {path ->
             font = Typeface.createFromAsset(mContext.assets, path)
@@ -79,8 +82,11 @@ class UIButton(context: Context, attributeSet: AttributeSet) : FrameLayout(conte
         drawParent()
         drawBackground()
         drawText()
-        drawIcon()
-        drawSpace()
+
+        if (icon != -1) {
+            drawIcon()
+            drawSpace()
+        }
 
         if (backgroundImage == -1) {
             parent.background = gradientDrawable
@@ -158,9 +164,9 @@ class UIButton(context: Context, attributeSet: AttributeSet) : FrameLayout(conte
     private fun drawSpace() {
         space = Space(mContext)
         if (iconPosition == POSITION_TOP || iconPosition == POSITION_BOTTOM) {
-            space.layoutParams = LayoutParams(1, spacing!!.toInt())
+            space.layoutParams = LayoutParams(1, spacing.toInt())
         } else {
-            space.layoutParams = LayoutParams(spacing!!.toInt(), 1)
+            space.layoutParams = LayoutParams(spacing.toInt(), 1)
         }
     }
 

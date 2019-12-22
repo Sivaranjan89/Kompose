@@ -8,6 +8,7 @@ import android.util.TypedValue
 import android.view.Gravity
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.*
+import com.droidlib.kompose.utils.GRAVITY_CENTER
 import com.droidlib.kompose.utils.TEXTSTYLE_BOLD
 import com.droidlib.kompose.utils.dpToPx
 import com.droidlib.kompose.utils.pxToDp
@@ -191,7 +192,7 @@ class UIToast(toastBuilder: Build) {
             return this
         }
 
-        fun build(): UIToast {
+        fun show(): UIToast {
             return UIToast(this)
         }
 

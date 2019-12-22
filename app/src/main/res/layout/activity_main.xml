@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/pin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="10dp"
-        android:text="OTP View"/>
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="20dp">
 
     <com.droidlib.kompose.otpview.OTPView
         android:id="@+id/pin_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pin"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         app:boxWidth="60dp"
         app:boxHeight="60dp"
         app:boxCount="4"
@@ -41,24 +30,11 @@
         app:disabledAlpha="0.5"
         app:isVertical="false"/>
 
-    <TextView
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pin_view"
-        android:layout_marginTop="10dp"
-        android:text="UIButton"/>
-
     <com.droidlib.kompose.button.UIButton
         android:id="@+id/button_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         app:text="Kotlin"
         app:backgroundColor="#0EE2A7"
         app:textColor="#000000"
@@ -75,4 +51,28 @@
         app:iconPosition="left"
         app:spacing="10dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.droidlib.kompose.edit.UIEditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:compWidth="250dp"
+        app:textSize="15dp"
+        app:textStyle="bold"
+        app:textColor="#000000"
+        app:icon="@mipmap/ic_launcher"
+        app:iconSize="30dp"
+        app:iconPosition="left"
+        app:spacing="5dp"
+        app:hint="Enter Name"
+        app:hintColor="@color/colorAccent"
+        app:strokeColor="#000000"
+        app:strokeWidth="1.5dp"
+        app:cornerRadius="4dp"
+        app:useOriginalBackground="false"
+        android:padding="3dp"
+        app:inputType="text"
+        app:allowPaste="true"
+        app:allCaps="false"
+        app:letterSpacing="0.1dp" />
+
+</LinearLayout>

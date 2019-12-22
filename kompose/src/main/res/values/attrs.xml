@@ -59,4 +59,61 @@
         <attr name="fontPath" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="UIEditText">
+        <attr name="compWidth" />
+        <attr name="compHeight" />
+        <attr name="text" />
+        <attr name="backgroundColor" />
+        <attr name="strokeColor" />
+        <attr name="cornerRadius" />
+        <attr name="strokeWidth" />
+        <attr name="textColor" />
+        <attr name="textSize" />
+        <attr name="textStyle" />
+        <attr name="icon" />
+        <attr name="iconSize" />
+        <attr name="iconPosition" />
+        <attr name="backgroundImage" />
+        <attr name="gravity" />
+        <attr name="spacing" />
+        <attr name="fontPath" />
+        <attr name="hintColor" format="color" />
+        <attr name="hint" format="string" />
+        <attr name="useOriginalBackground" />
+        <attr name="visibleCursor" />
+        <attr name="padding" format="dimension" />
+        <attr name="inputType" format="integer">
+            <enum name="text" value="1" />
+            <enum name="number" value="2" />
+            <enum name="phone" value="3" />
+            <enum name="datetime" value="4" />
+            <enum name="number_decimal" value="8192" />
+            <enum name="number_password" value="16" />
+            <enum name="email" value="32" />
+            <enum name="text_password" value="128" />
+            <enum name="person_name" value="96" />
+            <enum name="date" value="16" />
+            <enum name="time" value="32" />
+        </attr>
+        <attr name="digits" format="string" />
+        <attr name="allowPaste" format="boolean" />
+        <attr name="allCaps" format="boolean" />
+        <attr name="maxLength" format="integer" />
+        <attr name="maxLines" format="integer" />
+        <attr name="letterSpacing" format="dimension" />
+        <attr name="lines" format="integer" />
+        <attr name="lineSpacing" format="dimension" />
+        <attr name="imeOptions" format="integer">
+            <enum name="done" value="6" />
+            <enum name="go" value="2" />
+            <enum name="next" value="5" />
+            <enum name="none" value="1" />
+            <enum name="previous" value="7" />
+            <enum name="search" value="3" />
+            <enum name="send" value="4" />
+            <enum name="navigate_next" value="134217728" />
+            <enum name="navigate_previous" value="67108864" />
+        </attr>
+    </declare-styleable>
+
 </resources>
